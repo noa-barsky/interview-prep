@@ -1,13 +1,13 @@
 
-class Node():
+class Node:
     def __init__(self,data, nxt=None):
         self.data = data
         self.nxt = nxt
 
 
-class linkedList():
+class linkedList:
     def __init__(self,head=None):
-        self.head = head
+        self.head = Node(head)
     def insert_head(self, val):
         newNode = Node(val,self.head)
         self.head = newNode
@@ -51,19 +51,19 @@ class linkedList():
             slow_ptr = slow_ptr.nxt
         print(slow_ptr.data)
     def delete_node(self, index):
-        count = 0
-        curr = self.head
-        if index == 0:
-            self.head = curr.nxt
-        else:
-            while curr:
-                if count == (index - 1):
-                    break
-                else:
-                    count += 1
-                    curr = curr.nxt
-            temp = curr.nxt
-            curr.nxt = temp.nxt
+        if self.head:
+            count = 0
+            curr = self.head
+            if index == 0:
+                self.head = curr.nxt
+            else:
+                while curr:
+                    if count == (index - 1):
+                        break
+                    else:
+                        count += 1
+                        curr = curr.nxt
+                curr.nxt = curr.nxt.nxt
 
 
 new_node = linkedList()
@@ -74,7 +74,9 @@ new_node.insert_tail(9)
 new_node.insert_tail(10)
 new_node.insert_tail(54)
 new_node.insert_tail(45)
-new_node.delete_node(0)
+new_node.insert_tail(57)
+new_node.insert_tail(58)
+new_node.delete_node(3)
 new_node.printList()
 print("-------------")
 new_node.find_middle()

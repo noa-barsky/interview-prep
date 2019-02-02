@@ -5,8 +5,8 @@ class DNode:
         self.data = data
 
 class DoublyLinked:
-    def __init__(self):
-        self.head = None    
+    def __init__(self, head=None):
+        self.head = DNode(head)   
     def add_to_head(self, new_data):
         new_node = DNode(new_data)
         new_node.nxt = self.head

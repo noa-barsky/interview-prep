@@ -6,7 +6,7 @@ class DNode:
 
 class DoublyLinked:
     def __init__(self, head = None):
-        self.head = DNode(head )
+        self.head = DNode(head)
     def add_to_head(self, new_data):
         new_node = DNode(new_data)
         new_node.nxt = self.head
@@ -41,15 +41,7 @@ class DoublyLinked:
                     curr = curr.nxt
             new_node.nxt = curr.nxt
             new_node.prev = curr
-            curr.nxt = new_node
-
-
-
-                
-
-
-
-            
+            curr.nxt = new_node            
     def print_list(self):
         curr = self.head
         while curr:
