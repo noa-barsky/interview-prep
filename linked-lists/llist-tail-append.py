@@ -1,11 +1,11 @@
 
-class Node():
+class Node:
     def __init__(self,data, nxt=None):
         self.data = data
         self.nxt = nxt
 
 
-class linkedList():
+class linkedList:
     def __init__(self,head=None):
         self.head = head
     def insert_head(self, val):

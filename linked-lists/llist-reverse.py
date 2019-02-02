@@ -1,11 +1,11 @@
 
-class Node():
+class Node:
     def __init__(self,data, nxt=None):
         self.data = data
         self.nxt = nxt
 
 
-class linkedList():
+class linkedList:
     def __init__(self,head=None):
         self.head = head
     def insertHead(self, val):
@@ -27,7 +27,6 @@ class linkedList():
         self.head = prev
 
 new_node = linkedList()
-# new_node = linkedList(4)
 new_node.insertHead(4)
 new_node.insertHead(6)
 new_node.insertHead(8)

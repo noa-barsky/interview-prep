@@ -1,10 +1,10 @@
-class DNode():
-    def __init__(self,data):
-        self.nxt = None
-        self.prev = None
+class DNode:
+    def __init__(self,data,nxt=None, prev=None):
+        self.nxt = nxt
+        self.prev = prev
         self.data = data
 
-class DoublyLinked():
+class DoublyLinked:
     def __init__(self, head = None):
         self.head = DNode(head )
     def add_to_head(self, new_data):

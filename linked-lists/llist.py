@@ -20,10 +20,5 @@ class linkedList:
         print(self.head.data)
 
 new_node = linkedList(3)
-# print(new_node.head.data)
-# new_node.insertHead(5)
-# new_node.insertHead(6)
-# new_node.insertHead(7)
-# new_node.get_head()
 new_node.printList()
 
