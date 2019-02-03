@@ -1,7 +1,7 @@
 def count_items(sequence):
     counts = {}
     for item in sequence:
-        counts[item] = counts.get(item, 0) + 1
+        counts[item] = sequence.count(item)
     return counts
 
 def is_anagram(a, b):

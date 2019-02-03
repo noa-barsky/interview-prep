@@ -1,7 +1,13 @@
-def twoSum(l,k):
-    numsSeenSoFar = set()
-    for i in l:
-        if (k - i) in numsSeenSoFar:
+def two_sum(nums, target):
+    if len(nums) <= 1:
+        return False
+
+    aux_dict = {}
+    
+    for i in nums:
+        if i in aux_dict:
             return True
-        numsSeenSoFar.add(i)
+        else:
+            aux_dict[target - i] = 1
     return False
+print(two_sum([1,2,3,4,4], 34))

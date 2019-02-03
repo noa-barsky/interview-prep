@@ -1,6 +1,6 @@
 def merge_sort(arr):
     if len(arr) > 1:
-        mid = len(arr) / 2
+        mid = len(arr) // 2
         lefthalf = arr[:mid]
         righthalf = arr[mid:]
         merge_sort(lefthalf)
@@ -11,16 +11,20 @@ def merge_sort(arr):
         while i < len(lefthalf) and j < len(righthalf):
             if lefthalf[i] < righthalf[j]:
                 arr[k] = lefthalf[i]
-                i = i + 1
+                i += 1
             else:
                 arr[k] = righthalf[j]
-                j = j + 1
-            k = k + 1
-       while i < len(lefthalf):
+                j += 1
+            k += 1
+        while i < len(lefthalf):
             arr[k] = lefthalf[i]
-            i = i + 1
-            k = k + 1
-       while j < len(righthalf):
+            i += 1
+            k += 1
+        while j < len(righthalf):
             arr[k] = righthalf[j]
-            j = j + 1
-            k = k + 1
+            j += 1
+            k += 1
+        return arr
+
+
+print(merge_sort([232,25,1,1,4,7]))
