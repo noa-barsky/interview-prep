@@ -1,24 +1,24 @@
-class BinaryTree(object):
+class BinaryTree:
     def __init__(self,rootObj):
         self.key = rootObj
         self.leftChild = None
         self.rightChild = None
 
-    def insertLeft(self,newNode):
-        if self.leftChild == None:
-            self.leftChild = BinaryTree(newNode)
+    def insert(self, data):
+# Compare the new value with the parent node
+        if self.key:
+            if data < self.key:
+                if self.leftChild is None:
+                    self.leftChild = BinaryTree(data)
+                else:
+                    self.left.insert(data)
+            elif data > self.key:
+                if self.rightChild is None:
+                    self.rightChild = BinaryTree(data)
+                else:
+                    self.right.insert(data)
         else:
-            t = BinaryTree(newNode)
-            t.leftChild = self.leftChild
-            self.leftChild = t
-
-    def insertRight(self,newNode):
-        if self.rightChild == None:
-            self.rightChild = BinaryTree(newNode)
-        else:
-            t = BinaryTree(newNode)
-            t.rightChild = self.rightChild
-            self.rightChild = t
+            self.key = data
     def getRightChild(self):
         return self.rightChild
 
@@ -39,7 +39,7 @@ def inorder(root):
         inorder(root.rightChild)
 
 r = BinaryTree(10)
-r.insertLeft(9)
-r.insertRight(11)
+r.insert(9)
+r.insert(11)
 inorder(r)
 # print(inorder(r))
