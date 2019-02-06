@@ -14,10 +14,8 @@ class DoublyLinked:
     def print_list(self):
         curr = self.head
         while curr:
-            print(curr.data, end="->")
+            print(curr.data)
             curr = curr.nxt
-        print("\n")
-
 a = DoublyLinked(0)
 a.add_to_head(4)
 a.add_to_head(5)

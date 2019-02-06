@@ -4,21 +4,21 @@ class BinaryTree(object):
         self.leftChild = None
         self.rightChild = None
 
-    def insertLeft(self,newNode):
-        if self.leftChild == None:
-            self.leftChild = BinaryTree(newNode)
+    def insert(self, data):
+# Compare the new value with the parent node
+        if self.key:
+            if data < self.key:
+                if self.leftChild is None:
+                    self.leftChild = BinaryTree(data)
+                else:
+                    self.leftChild.insert(data)
+            elif data > self.key:
+                if self.rightChild is None:
+                    self.rightChild = BinaryTree(data)
+                else:
+                    self.rightChild.insert(data)
         else:
-            t = BinaryTree(newNode)
-            t.leftChild = self.leftChild
-            self.leftChild = t
-
-    def insertRight(self,newNode):
-        if self.rightChild == None:
-            self.rightChild = BinaryTree(newNode)
-        else:
-            t = BinaryTree(newNode)
-            t.rightChild = self.rightChild
-            self.rightChild = t
+            self.key = data
     def getRightChild(self):
         return self.rightChild
 
@@ -32,7 +32,7 @@ class BinaryTree(object):
         return self.key
 
 
-def DFS(root):
+def BFS(root):
     """In BFS the Node Values at each level of the Tree are traversed before going to next level"""
     to_visit = []
     if root:
@@ -47,9 +47,9 @@ def DFS(root):
 
 
 r = BinaryTree(10)
-r.insertLeft(8)
-r.insertLeft(9)
-r.insertRight(12)
-r.insertRight(11)
+r.insert(8)
+r.insert(9)
+r.insert(12)
+r.insert(11)
 
 BFS(r)

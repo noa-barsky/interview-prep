@@ -1,8 +1,6 @@
 def fib_sum_iter(n):
     a, b = 0, 1
     total = 0
-    if n == 0:
-        return total
     for i in range(0, n):
         a, b = b, a + b
         total += a

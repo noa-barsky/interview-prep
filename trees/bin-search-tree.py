@@ -11,12 +11,12 @@ class BinaryTree(object):
                 if self.leftChild is None:
                     self.leftChild = BinaryTree(data)
                 else:
-                    self.left.insert(data)
+                    self.leftChild.insert(data)
             elif data > self.key:
                 if self.rightChild is None:
                     self.rightChild = BinaryTree(data)
                 else:
-                    self.right.insert(data)
+                    self.rightChild.insert(data)
         else:
             self.key = data
     def getRightChild(self):
