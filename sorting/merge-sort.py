@@ -24,7 +24,7 @@ def merge_sort(arr):
             arr[k] = righthalf[j]
             j += 1
             k += 1
-        return arr
+    return arr
 
 
 print(merge_sort([232,25,1,1,4,7]))

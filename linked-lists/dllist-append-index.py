@@ -40,6 +40,7 @@ class DoublyLinked:
                     count += 1
                     curr = curr.nxt
             new_node.nxt = curr.nxt
+            new_node.nxt.prev = new_node
             new_node.prev = curr
             curr.nxt = new_node            
     def print_list(self):
@@ -53,5 +54,5 @@ a.add_to_head(4)
 a.add_to_tail(5)
 a.add_to_tail(6)
 a.add_to_index(50, 1)
-print(a.head.nxt.prev.data)
+print(a.head.nxt.nxt.prev.data)
 a.print_list()

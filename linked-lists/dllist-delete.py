@@ -56,6 +56,7 @@ class DoublyLinked:
                         count += 1
                         curr = curr.nxt
                 curr.nxt = curr.nxt.nxt
+                curr.nxt.prev = curr
     def print_list(self):
         if self.head:
             curr = self.head
@@ -66,5 +67,6 @@ class DoublyLinked:
 a = DoublyLinked(4)
 a.add_to_tail(5)
 a.add_to_tail(6)
-a.delete_node(0)
+a.delete_node(1)
+print(a.head.nxt.prev.data)
 a.print_list()

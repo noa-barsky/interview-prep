@@ -20,8 +20,8 @@ class DoublyLinked:
             curr.prev = curr.nxt
             curr.nxt = temp
             curr = curr.prev
-        if temp != None:
-            self.head = temp.prev
+        if temp:
+            self.head = temp.prev.nxt
     def print_list(self):
         curr = self.head
         while curr:
